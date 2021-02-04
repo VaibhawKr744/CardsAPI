@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import Card from './Card';
+import './Deck.css'
 const API_BASE_URL = "https://deckofcardsapi.com/api/deck"
 
 class Deck extends Component {
@@ -48,10 +49,11 @@ class Deck extends Component {
             <Card key={c.id} name={c.name} image={c.image} />
         ));
         return (
-            <div>
-                <h1>Card Dealer</h1>
-                <button onClick={this.getCard}>Get Card!</button>
-                {cards}
+            <div className='Deck'>
+                <h1 className='Deck-title'>&#9830; Card Dealer &#9830;</h1>
+                <h2 className='Deck-title subtitle'>&#9830; A little demo with react &#9830;</h2>
+                <button className="Deck-btn" onClick={this.getCard}>Get Card!</button>
+                <div className='Deck-cardarea'>{cards}</div>
             </div>
         )
     }
